@@ -5,6 +5,7 @@ set VERSION=5.3.4
 set FILENAME=lua-%VERSION%.tar.gz
 set DIRNAME=lua-%VERSION%
 
+if exist lua call :Clean
 if not exist %FILENAME% call :Download
 echo Unzipping %FILENAME% ..
 >nul tar zxvf %FILENAME%
@@ -14,14 +15,10 @@ echo Building %DIRNAME% ..
 >nul make mingw
 echo Check version:
 make test
-echo Making target [%DIRNAME%\install] ..
+echo Making target [%DIRNAME%\install -^> lua] ..
 >nul make local
+>nul move /y install ..\lua
 echo Ok.
-pushd install
-echo Zipping lua.zip ..
-zip -q ../../lua.zip ./*
-echo Ok.
-popd
 popd
 echo clean
 >nul del /s/f/q %DIRNAME%
@@ -33,5 +30,12 @@ goto :EOF
 :Download
 echo Downloading %FILENAME% ..
 start /w curl -R -O https://www.lua.org/ftp/%FILENAME%
+echo Ok.
+goto :EOF
+
+:Clean
+echo Cleaning previous files ..
+>nul del /s/f/q lua
+rd /s/q lua
 echo Ok.
 goto :EOF
