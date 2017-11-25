@@ -23,11 +23,11 @@ clean
 Ok.
 ```
 
-Then there will be `lua\` in this folder, which contains:
+Then there will be `lua/` in this folder, which contains:
 
 ```
 bin:
-    lua luac 
+    lua luac lua*.dll
 include:
     lua.h luaconf.h lualib.h lauxlib.h lua.hpp 
 lib:
