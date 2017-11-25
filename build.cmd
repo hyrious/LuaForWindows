@@ -18,6 +18,7 @@ make test
 echo Making target [%DIRNAME%\install -^> lua] ..
 >nul make local
 >nul move /y install ..\lua
+>nul copy /y src\*.dll ..\lua\bin
 echo Ok.
 popd
 echo clean
