@@ -36,6 +36,17 @@ man/man1:
     lua.1 luac.1 
 ```
 
+## [LuaRocks](https://luarocks.org)
+
+The package manager for Lua modules. Quick installation:
+
+1. download [the latest release][1] and extract it
+2. start a cmd.exe with administrator privileges
+3. `install /F /MW` (force cover & use mingw)
+4. add `C:\Program Files (x86)\LuaRocks` to PATH
+
 ## License
 
 WTFPLv2.
+
+[1]: https://luarocks.github.io/luarocks/releases
