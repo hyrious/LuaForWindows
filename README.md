@@ -1,8 +1,11 @@
 ## Require
 
-- msys2 ( buildtools, curl )
+- Msys2 ( buildtools, curl )
 
 ## Make
+
+Notice: Lua itself uses `mkdir -p` and `rm -rf` in its Makefile, which needs environment supporting.
+Ensure `mkdir.exe rm.exe`'s folder is in PATH.
 
 ```
 build
@@ -11,12 +14,12 @@ build
 You will see something like:
 
 ```
-Unzipping lua-5.3.4.tar.gz ..
+Unzipping lua-5.3.5.tar.gz ..
 Ok.
-Building lua-5.3.4 ..
+Building lua-5.3.5 ..
 Check version:
 src/lua -v
-Lua 5.3.4  Copyright (C) 1994-2017 Lua.org, PUC-Rio
+Lua 5.3.5  Copyright (C) 1994-2018 Lua.org, PUC-Rio
 Making target [lua-5.3.4\install -> lua] ..
 Ok.
 clean
