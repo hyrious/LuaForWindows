@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-set VERSION=5.4.0
+set VERSION=5.4.1
 set FILENAME=lua-%VERSION%.tar.gz
 set DIRNAME=lua-%VERSION%
 
